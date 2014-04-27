@@ -1,0 +1,23 @@
+{
+  "name": "adaptive-evil-blocks",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": ">= 2.1.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/outpunk/adaptive-evil-blocks.git"
+  },
+  "devDependencies": {
+    "coffee-script": "1.7.1",
+    "uglify-js":     "2.4.13",
+    "fs-extra":      "0.8.1",
+    "should":        "3.3.1",
+    "mocha":         "1.18.2",
+    "jsdom":         "0.10.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}

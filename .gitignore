@@ -1,0 +1,12 @@
+.DS_Store
+*~
+
+node_modules
+bower_components
+
+build
+pkg
+*.gem
+
+Gemfile.lock
+.bundle

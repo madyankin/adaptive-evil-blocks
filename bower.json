@@ -1,0 +1,25 @@
+{
+  "name": "evil-blocks",
+  "version": "0.1.0",
+  "homepage": "https://github.com/outpunk/adaptive-evil-blocks",
+  "authors": ["Alexander Madyankin <alexander@madyankin.name>"],
+  "description": "Adaptive JS for Evil Blocks",
+  "keywords": "framework blocks adaptive",
+  "license": "MIT",
+  "main": [
+    "pkg/adaptive-evil-blocks.js"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.6.0",
+    "evil-blocks": ">= 0.6.0"
+  },
+  "ignore": [
+    "package.json",
+    "*.gemspec",
+    "Cakefile",
+    "Gemfile*",
+    "test",
+    "*.rb",
+    ".*"
+  ]
+}

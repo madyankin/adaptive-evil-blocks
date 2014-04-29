@@ -1,5 +1,6 @@
  --reporter spec
  --require should
  --require ./test/mocha
- --require ./lib/evil-blocks
+ --require ./bower_components/evil-blocks/lib/evil-blocks.js
+ --require ./lib/adaptive-evil-blocks.coffee
  --compilers coffee:coffee-script/register

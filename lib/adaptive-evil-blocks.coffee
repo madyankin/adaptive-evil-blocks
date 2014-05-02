@@ -2,10 +2,8 @@ evil = window.evil
 
 adaptive = (obj) ->
 
-  initIf = obj.initIf
+  mql = matchMedia(obj.initIf)
+  mql.matches
 
 
-
-
-
-evil.block.filters.unshift(adaptive)
+evil.block.filters.splice(0, 0, adaptive)

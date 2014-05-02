@@ -15,10 +15,23 @@ describe 'adaptive', ->
     body '<div data-block="test"></div>'
 
     initialized = false
-    window.innerWidth = 500
+    width       = window.innerWidth
 
     evil.block '@@test',
-      initIf: {minWidth: 501}
+      initIf: "(max-width: #{width}px)"
+      init: -> initialized = true
+
+    initialized.should.equal true
+
+
+  it 'does not init block if it does not match', ->
+    body '<div data-block="test"></div>'
+
+    initialized = false
+    width       = window.innerWidth
+
+    evil.block '@@test',
+      initIf: "(min-width: #{width + 1}px)"
       init: -> initialized = true
 
     initialized.should.equal false

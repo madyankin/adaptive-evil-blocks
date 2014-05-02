@@ -1,4 +1,4 @@
-jsdom    = require('jsdom')
+jsdom    = require('jsdom');
 window   = jsdom.jsdom().createWindow();
 document = window.document;
 global.document.implementation.createHTMLDocument = function (html, url) {

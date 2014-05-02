@@ -16,19 +16,39 @@ project =
     @package().version
 
 
+cmd = (command) ->
+  exec command, (err, stdout, stderr) ->
+    throw err if err
+    console.log stdout + stderr
+
+compile = (file) ->
+  coffee.compile(readFile(file))
+
+readFile = (file) ->
+  fs.readFileSync(file).toString()
+
+
 task 'clean', 'Remove all generated files', ->
   fs.removeSync('pkg/') if fs.existsSync('pkg/')
   for file in fs.readdirSync('./')
     fs.removeSync(file) if file.match(/\.gem$/)
+  fs.removeSync('test/adaptive.js') if fs.existsSync('test/adaptive.js')
 
 
 task 'build', 'Compile coffee files', ->
   invoke('clean')
   fs.mkdirsSync('pkg/')
 
-  source    = fs.readFileSync('./lib/adaptive-evil-blocks.coffee').toString()
-  compiled  = coffee.compile(source)
-  minimized = uglify.minify(compiled, fromString: true).code
+  matchMedia  = readFile('./bower_components/matchMedia/matchMedia.js')
+  compiled    = matchMedia + compile('./lib/adaptive-evil-blocks.coffee')
+  minimized   = uglify.minify(compiled, fromString: true).code
 
-  fs.writeFile("pkg/#{project.name()}-#{project.version()}.js", compiled)
-  fs.writeFile("pkg/#{project.name()}-#{project.version()}.min.js", minimized)
+  fs.writeFileSync("pkg/#{project.name()}-#{project.version()}.js", compiled)
+  fs.writeFileSync("pkg/#{project.name()}-#{project.version()}.min.js", minimized)
+
+
+task 'test', 'Run tests', ->
+  invoke('build')
+  fs.writeFileSync('test/adaptive.js', compile('test/adaptive.coffee'))
+
+

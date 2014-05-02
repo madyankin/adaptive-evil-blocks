@@ -10,3 +10,5 @@ pkg
 
 Gemfile.lock
 .bundle
+
+test/adaptive.js

@@ -11,7 +11,8 @@
   ],
   "dependencies": {
     "jquery": ">= 1.6.0",
-    "evil-blocks": ">= 0.6.0"
+    "evil-blocks": ">= 0.6.0",
+    "matchMedia": ">= 0.2.0"
   },
   "ignore": [
     "package.json",

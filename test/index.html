@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/evil-blocks/lib/evil-blocks.js"></script>
+    <script src="../pkg/adaptive-evil-blocks-0.1.0.js"></script>
+
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script>
+      mocha.ui('bdd');
+      mocha.reporter('html');
+      expect = chai.expect;
+    </script>
+
+    <script src="adaptive.js"></script>
+
+    <script>
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); }
+    </script>
+
+  </head>
+
+  <body>
+    <div id="mocha"></div>
+    <div id="fixtures"></div>
+  </body>
+
+</html>

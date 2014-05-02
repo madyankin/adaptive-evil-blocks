@@ -1,5 +1,6 @@
-evil      = window.evil
-body      = (html) -> evil.block.vitalize fixtures.html(html)
-fixtures  = null
+evil = window.evil
 
-describe 'evil.adaptive', ->
+adaptive = (obj) ->
+
+
+evil.block.filters.unshift(adaptive)

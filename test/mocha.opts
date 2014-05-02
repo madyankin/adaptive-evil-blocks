@@ -2,4 +2,5 @@
  --require should
  --require ./test/mocha
  --require ./bower_components/evil-blocks/lib/evil-blocks.js
+ --require ./lib/adaptive-evil-blocks.coffee
  --compilers coffee:coffee-script/register

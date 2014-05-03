@@ -39,8 +39,10 @@ task 'build', 'Compile coffee files', ->
   invoke('clean')
   fs.mkdirsSync('pkg/')
 
-  matchMedia  = readFile('./bower_components/matchMedia/matchMedia.js')
-  compiled    = matchMedia + compile('./lib/adaptive-evil-blocks.coffee')
+  compiled    = ''
+  compiled    += readFile('./bower_components/matchMedia/matchMedia.js')
+  compiled    += readFile('./bower_components/matchMedia/matchMedia.addListener.js')
+  compiled    += compile('./lib/adaptive-evil-blocks.coffee')
   minimized   = uglify.minify(compiled, fromString: true).code
 
   fs.writeFileSync("pkg/#{project.name()}-#{project.version()}.js", compiled)

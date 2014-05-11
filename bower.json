@@ -1,9 +1,9 @@
 {
-  "name": "evil-blocks",
-  "version": "0.1.0",
+  "name": "adaptive-evil-blocks",
+  "version": "0.1.1",
   "homepage": "https://github.com/outpunk/adaptive-evil-blocks",
   "authors": ["Alexander Madyankin <alexander@madyankin.name>"],
-  "description": "Adaptive JS for Evil Blocks",
+  "description": "Adaptivity support for Evil Blocks ",
   "keywords": "framework blocks adaptive",
   "license": "MIT",
   "main": [
@@ -21,6 +21,7 @@
     "Gemfile*",
     "test",
     "*.rb",
-    ".*"
+    ".*",
+    "*.gem"
   ]
 }

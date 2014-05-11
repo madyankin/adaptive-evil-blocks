@@ -7,7 +7,7 @@ uglify  = require('uglify-js')
 project =
 
   package: ->
-    JSON.parse(fs.readFileSync('package.json'))
+    JSON.parse(fs.readFileSync('bower.json'))
 
   name: ->
     @package().name
@@ -15,6 +15,24 @@ project =
   version: ->
     @package().version
 
+  authors: ->
+    @package().authors[0]
+
+  description: ->
+    @package().description
+
+  homepage: ->
+    @package().homepage
+
+  message: ->
+    """
+    /*
+     * #{@name()}-#{@version()}
+     * #{@description()}
+     * #{@homepage()}
+     * #{(new Date).getFullYear()} #{@authors()}
+     */\n\n
+    """
 
 cmd = (command) ->
   exec command, (err, stdout, stderr) ->
@@ -39,14 +57,21 @@ task 'build', 'Compile coffee files', ->
   invoke('clean')
   fs.mkdirsSync('pkg/')
 
+  adaptive    = project.message()
+  adaptive    += compile('./lib/adaptive-evil-blocks.coffee')
+
   compiled    = ''
   compiled    += readFile('./bower_components/matchMedia/matchMedia.js')
   compiled    += readFile('./bower_components/matchMedia/matchMedia.addListener.js')
-  compiled    += compile('./lib/adaptive-evil-blocks.coffee')
+  compiled    += adaptive
   minimized   = uglify.minify(compiled, fromString: true).code
 
-  fs.writeFileSync("pkg/#{project.name()}-#{project.version()}.js", compiled)
-  fs.writeFileSync("pkg/#{project.name()}-#{project.version()}.min.js", minimized)
+  fs.writeFileSync("pkg/#{project.name()}.polyfilled.js", compiled)
+  fs.writeFileSync("pkg/#{project.name()}.polyfilled.min.js", minimized)
+
+  minimized = uglify.minify(adaptive, fromString: true).code
+  fs.writeFileSync("pkg/#{project.name()}.js", adaptive)
+  fs.writeFileSync("pkg/#{project.name()}.min.js", minimized)
 
 
 task 'test', 'Run tests', ->

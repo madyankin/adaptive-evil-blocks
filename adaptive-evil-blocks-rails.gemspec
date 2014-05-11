@@ -9,7 +9,11 @@ Gem::Specification.new do |s|
   s.version     = version
   s.summary     = 'Adaptive JS for Evil Blocks'
 
-  s.files            = %w(lib/evil-blocks.js lib/adaptive-evil-blocks-rails.rb LICENSE README.md)
+  s.files            = %w(lib/adaptive-evil-blocks.coffee
+                          lib/adaptive-evil-blocks-rails.rb
+                          LICENSE
+                          README.md
+                        )
   s.extra_rdoc_files = %w(LICENSE README.md)
   s.require_path     = 'lib'
 

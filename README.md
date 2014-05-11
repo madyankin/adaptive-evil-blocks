@@ -10,10 +10,38 @@ The [matchMedia.js] polyfill is used for old browsers.
 The adaptivity is provided by the `@media` method powered by underlying
 matchMedia API. So you can use [media queries] syntax.
 
+## Installation
+
+### Ruby on Rails
+
+Add `adaptive-evil-blocks-rails` gem to `Gemfile`:
+
+```ruby
+gem "adaptive-evil-blocks-rails"
+```
+
+Add `adaptive-evil-blocks` to your scripts:
+
+```js
+//= require adaptive-evil-blocks
+```
+
+### Others
+Add the `pkg/adaptive-evil-blocks.js` file to your project or install
+the bower package:
+
+```
+bower install adaptive-evil-blocks
+```
+
+If you support old browsers, you may want to use the
+`pkg/adaptive-evil-blocks.polyfilled.js` file.
+
+
 ## Usage
 
 Run code once only if it matches a query:
-```
+```coffee
 evil.block '@@block',
 
   init: -> ...
@@ -24,7 +52,8 @@ evil.block '@@block',
 
 The `match` callback is executed every time on query match, the `mismatch`
 callback is executed every time on query mismatch.
-```
+
+```coffee
 evil.block '@@block',
 
   init: -> ...

@@ -11,27 +11,23 @@ describe 'adaptive', ->
     evil.block.defined = []
 
 
-  it 'inits block if it matches', ->
+  it 'runs code if it matches a query', ->
     body '<div data-block="test"></div>'
 
     initialized = false
-    width       = window.innerWidth
-
     evil.block '@@test',
-      initIf: "(max-width: #{width}px)"
-      init: -> initialized = true
+      init: ->
+        @media '(min-width: 1px)', -> initialized = true
 
     initialized.should.equal true
 
 
-  it 'does not init block if it does not match', ->
+  it 'does not run code if it does not match a query', ->
     body '<div data-block="test"></div>'
 
     initialized = false
-    width       = window.innerWidth
-
     evil.block '@@test',
-      initIf: "(min-width: #{width + 1}px)"
-      init: -> initialized = true
+      init: ->
+        @media '(min-width: 10000px)', -> initialized = true
 
     initialized.should.equal false

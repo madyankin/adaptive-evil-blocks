@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'adaptive-evil-blocks-rails'
   s.version     = version
-  s.summary     = 'Adaptive JS for Evil Blocks'
+  s.summary     = 'Adaptivity support for Evil Blocks'
 
   s.files            = %w(lib/adaptive-evil-blocks.coffee
                           lib/adaptive-evil-blocks-rails.rb
@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/outpunk/adaptive-evil-blocks'
   s.license  = 'MIT'
 
-  s.add_dependency 'sprockets',   '>= 2'
-  s.add_dependency 'evil-blocks', '>= 0.6'
+  s.add_dependency 'sprockets',         '>= 2'
+  s.add_dependency 'evil-blocks-rails', '>= 0.6'
 end

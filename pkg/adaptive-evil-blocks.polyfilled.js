@@ -120,8 +120,8 @@ window.matchMedia || (window.matchMedia = function() {
     };
 }());
 /*
- * adaptive-evil-blocks-0.1.0
- * Adaptivity support for Evil Blocks 
+ * adaptive-evil-blocks-0.1.2
+ * Adaptivity support for Evil Blocks
  * https://github.com/outpunk/adaptive-evil-blocks
  * 2014 Alexander Madyankin <alexander@madyankin.name>
  */

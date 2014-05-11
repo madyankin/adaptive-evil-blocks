@@ -1,6 +1,6 @@
 {
   "name": "adaptive-evil-blocks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "jquery": ">= 2.1.0"
   },

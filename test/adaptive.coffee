@@ -71,3 +71,11 @@ describe 'media', ->
 
     two.should.equal 'match'
 
+
+  it 'runs a callback if it matches a query without brackets', ->
+    initialized = false
+    evil.block '@@test',
+      init: ->
+        @media 'min-width: 1px', -> initialized = true
+
+    initialized.should.equal true

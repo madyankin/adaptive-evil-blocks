@@ -1,8 +1,13 @@
 evil = window.evil
 
 
+addBrackets = (query) ->
+  re = /^([-\w]+:)\s*\d\w+$/im
+  query.replace re, (match) -> "(#{match})"
+
+
 media = (query, callback) ->
-  mql = window.matchMedia(query)
+  mql = window.matchMedia addBrackets(query)
 
   if typeof(callback) is 'function' and mql.matches
     callback()

@@ -47,7 +47,6 @@ readFile = (file) ->
 
 
 task 'clean', 'Remove all generated files', ->
-  fs.removeSync('pkg/') if fs.existsSync('pkg/')
   for file in fs.readdirSync('./')
     fs.removeSync(file) if file.match(/\.gem$/)
   fs.removeSync('test/adaptive.js') if fs.existsSync('test/adaptive.js')

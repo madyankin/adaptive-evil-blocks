@@ -6,13 +6,21 @@
  */
 
 (function() {
-  var evil, media;
+  var addBrackets, evil, media;
 
   evil = window.evil;
 
+  addBrackets = function(query) {
+    var re;
+    re = /^([-\w]+:)\s*\d\w+$/im;
+    return query.replace(re, function(match) {
+      return "(" + match + ")";
+    });
+  };
+
   media = function(query, callback) {
     var handler, match, mismatch, mql;
-    mql = window.matchMedia(query);
+    mql = window.matchMedia(addBrackets(query));
     if (typeof callback === 'function' && mql.matches) {
       callback();
       return;

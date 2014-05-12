@@ -40,7 +40,7 @@ If you support old browsers, you may want to use the
 
 ## Usage
 
-Run code once only if it matches a query:
+Run code once only if it matches a media query:
 ```coffee
 evil.block '@@block',
 
@@ -62,4 +62,12 @@ evil.block '@@block',
 
     @media '(max-width: 399px)', match: -> ... , mismatch: -> ...
     @media '(min-width: 400px)', match: -> ... , mismatch: -> ...
+```
+
+Also you can omit brackets for properties like `max-width` and `min-width`:
+
+```coffee
+evil.block '@@block',
+  init: -> ...
+    @media 'max-width: 399px', -> ...
 ```

@@ -3,7 +3,7 @@ body     = (html) -> evil.block.vitalize fixtures.html(html)
 fixtures = null
 
 
-describe 'adaptive', ->
+describe 'media', ->
   before -> fixtures = $('#fixtures')
 
   beforeEach ->

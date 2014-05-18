@@ -1,5 +1,7 @@
 # Adaptive Evil Blocks
 
+[![Build Status](https://travis-ci.org/outpunk/adaptive-evil-blocks.svg?branch=master)](https://travis-ci.org/outpunk/adaptive-evil-blocks)
+
 [Evil Blocks]:    https://github.com/ai/evil-blocks/
 [matchMedia.js]:  https://github.com/paulirish/matchMedia.js/
 [media queries]:  http://www.w3.org/TR/css3-mediaqueries/

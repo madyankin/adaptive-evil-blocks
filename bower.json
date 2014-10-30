@@ -4,7 +4,7 @@
   "homepage": "https://github.com/outpunk/adaptive-evil-blocks",
   "authors": ["Alexander Madyankin <alexander@madyankin.name>"],
   "description": "Adaptivity support for Evil Blocks",
-  "keywords": "framework blocks adaptive",
+  "keywords": ["framework", "blocks", "adaptive"],
   "license": "MIT",
   "main": [
     "pkg/adaptive-evil-blocks.js"

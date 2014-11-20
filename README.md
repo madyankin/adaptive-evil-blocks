@@ -5,12 +5,15 @@
 [Evil Blocks]:    https://github.com/ai/evil-blocks/
 [matchMedia.js]:  https://github.com/paulirish/matchMedia.js/
 [media queries]:  http://www.w3.org/TR/css3-mediaqueries/
+[Evil Martians]:  http://evilmartians.com
 
 Adaptive Evil Blocks is a filter that adds adaptivity to [Evil Blocks].
 The [matchMedia.js] polyfill is used for old browsers.
 
 The adaptivity is provided by the `@media` method powered by underlying
 matchMedia API. So you can use [media queries] syntax.
+
+Sponsored by [Evil Martians].
 
 ## Installation
 
